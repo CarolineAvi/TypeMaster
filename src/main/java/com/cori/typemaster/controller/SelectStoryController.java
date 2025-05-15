@@ -1,14 +1,18 @@
 package com.cori.typemaster.controller;
 
+import com.cori.typemaster.model.Story;
+import com.cori.typemaster.service.StoryService;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 
+import java.util.List;
+
 public class SelectStoryController {
 
     @FXML
-    private ListView<String> storyListView;
+    private ListView<Story> storyListView;
 
     @FXML
     private Button startButton;
@@ -16,18 +20,20 @@ public class SelectStoryController {
     @FXML
     private Button backButton;
 
+    private List<Story> storyList;
+
     @FXML
     public void initialize() {
-        // Przykładowe historie (usuń i załaduj własne, jeśli chcesz)
-        storyListView.setItems(FXCollections.observableArrayList(
-            "Historia 1", "Historia 2", "Historia 3"
-        ));
+        // Załaduj listę historii z serwisu
+        StoryService storyService = new StoryService();
+        storyList = storyService.loadAllStories();
+        storyListView.setItems(FXCollections.observableArrayList(storyList));
 
-        // Przyciski
+        // Obsługa przycisków
         startButton.setOnAction(e -> startSelectedStory());
         backButton.setOnAction(e -> handleBack());
 
-        // Start można kliknąć dopiero po wybraniu historii
+        // Przycisk aktywny tylko po wybraniu historii
         startButton.disableProperty().bind(
             storyListView.getSelectionModel().selectedItemProperty().isNull()
         );
@@ -35,9 +41,9 @@ public class SelectStoryController {
 
     @FXML
     private void startSelectedStory() {
-        String selectedStory = storyListView.getSelectionModel().getSelectedItem();
+        Story selectedStory = storyListView.getSelectionModel().getSelectedItem();
         if (selectedStory != null) {
-            // Przekaż wybraną historię i przejdź do ekranu gry
+            // TODO: Przekaż wybraną historię do GameController/GameScreen (np. przez singleton, context lub custom load)
             com.cori.typemaster.app.GameApplication.switchScene("/com/cori/typemaster/controller/game-screen.fxml");
         }
     }

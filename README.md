@@ -39,7 +39,27 @@ TypeMaster is a typing game designed to enhance real-life typing skills. Players
 ---
 
 ## Next Steps
-- Implement predefined story loading system.
-- Build JavaFX-based GUI for displaying and typing stories.
-- Implement real-time input validation and correction system.
-- Add animations and UI enhancements.
+
+1. **Implement story loading system**
+   - Stwórz model i serwis do ładowania opowiadań z plików (np. TXT lub JSON).
+   - Wyświetlanie dostępnych historii na ekranie wyboru.
+
+2. **Build gameplay logic**
+   - Zaprojektuj widok do przepisania tekstu (wyświetlanie i input).
+   - Dodaj walidację wpisywanego tekstu w czasie rzeczywistym z wymuszeniem poprawek.
+   - Wprowadź podświetlanie poprawnych i błędnych fragmentów.
+
+3. **Add statistics tracking**
+   - Zaimplementuj śledzenie i wyświetlanie słów na minutę (WPM) oraz innych statystyk.
+   - Dodaj wyświetlanie podsumowania po zakończeniu rozgrywki.
+
+4. **Enhance animations and UI feedback**
+   - Dodaj animacje oraz efekty wizualne podczas przełączania ekranów i wpisywania tekstu.
+   - Zadbaj o wyraźny feedback przy poprawnych i błędnych akcjach.
+
+5. **Finish and improve settings**
+   - Podłącz ustawienia do faktycznego działania (np. zmiana rozdzielczości, fullscreen).
+
+6. **(Opcjonalnie) Rozszerz możliwości gry**
+   - Dodaj zapis wyników i ranking.
+   - Wprowadź nowe tryby rozgrywki oraz opcję importu własnych tekstów.
