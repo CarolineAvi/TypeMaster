@@ -8,36 +8,65 @@ import javafx.scene.layout.VBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.input.KeyCode;
 
+/**
+ * Controller for the game screen.
+ * <p>
+ * Handles story display, typing area, and pause/quit functionality in the game.
+ * Provides mechanisms for pausing/resuming the game and transitioning between screens.
+ * </p>
+ * <h2>Key Features</h2>
+ * <ul>
+ *     <li>Displays the current story's title and content.</li>
+ *     <li>Handles pause overlay, including resume, quit, and main menu navigation.</li>
+ *     <li>Captures ESC key to toggle pause.</li>
+ *     <li>Placeholder for end-game logic when the typing is complete.</li>
+ * </ul>
+ * 
+ * @author YourName
+ */
 public class GameController {
 
     @FXML
     private Label storyTitleLabel;
+
     @FXML
     private TextArea storyContentArea;
+
     @FXML
     private Button quitButton;
+
     @FXML
     private Button resumeButton;
+
     @FXML
     private Button toMainMenuButton;
+
     @FXML
     private VBox pauseOverlay;
+
     @FXML
     private StackPane rootPane;
 
+    /**
+     * Initializes event handlers for the game screen.
+     * <ul>
+     *     <li>Assigns actions to pause menu buttons.</li>
+     *     <li>Initializes the pause overlay in hidden state.</li>
+     *     <li>Captures the ESCAPE key to toggle the pause overlay.</li>
+     *     <li>Provides a placeholder for handling story completion.</li>
+     * </ul>
+     */
     @FXML
     public void initialize() {
-        // Obsługa przycisków w menu
+        // Handle actions in the pause menu
         resumeButton.setOnAction(e -> setPauseOverlayVisible(false));
         toMainMenuButton.setOnAction(e -> com.cori.typemaster.app.GameApplication.switchScene("/com/cori/typemaster/controller/main-screen.fxml"));
-
-        // Obsługa przycisku Quit
         quitButton.setOnAction(e -> com.cori.typemaster.app.GameApplication.switchScene("/com/cori/typemaster/controller/main-screen.fxml"));
 
-        // Schowanie nakładki na start
+        // Hide the pause overlay at start
         setPauseOverlayVisible(false);
 
-        // Obsługa ESC tylko w game-screen!
+        // Handle ESC key for toggling pause overlay only in game-screen
         pauseOverlay.sceneProperty().addListener((obs, oldScene, newScene) -> {
             if (newScene != null) {
                 rootPane.requestFocus();
@@ -50,9 +79,7 @@ public class GameController {
             }
         });
 
-        // --- tutaj przykładowy mechanizm kończenia po wpisaniu wszystkich znaków ---
-        // Jeśli masz pole tekstowe do wpisywania, musisz reagować na jego zmiany.
-        // Poniżej uproszczenie (trzeba dostosować do Twojej logiki):
+        // Sample logic: End game when all characters are typed (placeholder for your logic)
         /*
         storyContentArea.textProperty().addListener((obs, oldText, newText) -> {
             if (czyUzytkownikWpisalWszystko()) {
@@ -62,14 +89,23 @@ public class GameController {
         */
     }
 
+    /**
+     * Shows or hides the pause overlay.
+     * @param visible true to show pause overlay; false to hide
+     */
     private void setPauseOverlayVisible(boolean visible) {
         pauseOverlay.setVisible(visible);
         pauseOverlay.setMouseTransparent(!visible);
     }
 
-    // Dodaj tutaj logikę kończenia gry:
+    /**
+     * Handles end of game logic.
+     * <p>
+     * This method is called when the user completes story typing.
+     * Transitions to the main screen (you can customize with summary or end screen).
+     * </p>
+     */
     private void zakonczGre() {
-        // np. wyświetl podsumowanie lub przejdź do ekranu końcowego
         com.cori.typemaster.app.GameApplication.switchScene("/com/cori/typemaster/controller/main-screen.fxml");
     }
 }
