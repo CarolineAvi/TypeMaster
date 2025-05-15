@@ -27,7 +27,6 @@ import javafx.scene.control.Button;
  *
  * Usage: Automatically instantiated and managed via FXML loader by JavaFX.
  *
- * @author YourName
  */
 public class MainScreenController {
 

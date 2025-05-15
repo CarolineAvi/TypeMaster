@@ -41,7 +41,6 @@ import java.util.List;
  *     <li>Depends on {@link GameApplication#getPrimaryStage()} for stage references.</li>
  * </ul>
  *
- * @author YourName
  */
 public class SettingsController {
 

@@ -26,8 +26,7 @@ package com.cori.typemaster.model;
  * </ul>
  * 
  * Instances are typically immutable; modify only via new instantiation.
- * 
- * @author YourName
+ *
  */
 public class Story {
     /** The story's title. */

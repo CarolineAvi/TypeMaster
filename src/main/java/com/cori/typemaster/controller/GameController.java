@@ -21,8 +21,7 @@ import javafx.scene.input.KeyCode;
  *     <li>Captures ESC key to toggle pause.</li>
  *     <li>Placeholder for end-game logic when the typing is complete.</li>
  * </ul>
- * 
- * @author YourName
+ *
  */
 public class GameController {
 

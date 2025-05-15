@@ -37,7 +37,6 @@ import java.util.List;
  *     <li>This controller is managed and instantiated by the JavaFX FXML loader.</li>
  * </ul>
  *
- * @author YourName
  */
 public class SelectStoryController {
 

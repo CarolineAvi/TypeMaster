@@ -30,7 +30,7 @@ import javafx.stage.Stage;
  *   <li>{@link #getMainScene()}</li>
  * </ul>
  *
- * @author YourName
+ * @author https://github.com/CarolineAvi
  */
 public class GameApplication extends Application {
 

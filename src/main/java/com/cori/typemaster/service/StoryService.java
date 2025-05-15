@@ -37,8 +37,7 @@ import java.util.List;
  * </ul>
  * 
  * This class does not cache results; each call reloads story data from resources.
- * 
- * @author YourName
+ *
  */
 public class StoryService {
     /** Array of supported difficulty labels/categories (folder and file prefix). */
