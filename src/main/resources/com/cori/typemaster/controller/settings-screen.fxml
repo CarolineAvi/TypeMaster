@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+            fx:controller="com.cori.typemaster.controller.SettingsController"
+            prefWidth="600" prefHeight="400">
+
+    <center>
+        <VBox spacing="24" alignment="CENTER">
+            <Label text="Settings" styleClass="title"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Resolution:"/>
+                <ComboBox fx:id="resolutionBox" prefWidth="180"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER">
+                <Label text="Fullscreen:"/>
+                <CheckBox fx:id="fullscreenToggle"/>
+            </HBox>
+            <HBox spacing="16" alignment="CENTER">
+                <Button fx:id="applyButton" text="Apply" minWidth="100"/>
+                <Button fx:id="backButton" text="Back" minWidth="100"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

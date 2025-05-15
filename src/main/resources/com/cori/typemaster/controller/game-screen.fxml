@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.text.Text?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.cori.typemaster.controller.GameController"
+           fx:id="rootPane"
+           alignment="CENTER">
+
+    <VBox alignment="CENTER">
+        <BorderPane maxWidth="720" minWidth="520"
+                    styleClass="game-panel"
+                    BorderPane.alignment="CENTER">
+            <top>
+                <Label fx:id="storyTitleLabel" text="Story Title" styleClass="title" BorderPane.alignment="CENTER"/>
+            </top>
+            <center>
+                <TextArea fx:id="storyContentArea" wrapText="true" editable="false" prefHeight="250"/>
+            </center>
+            <bottom>
+                <BorderPane>
+                    <center>
+                        <Text fx:id="timerText" text="00:00" styleClass="timer"/>
+                    </center>
+                    <right>
+                        <Button fx:id="quitButton" text="Quit"/>
+                    </right>
+                </BorderPane>
+            </bottom>
+        </BorderPane>
+    </VBox>
+
+    <!-- MENU NAKŁADKA -->
+    <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="30.0" styleClass="game-panel" visible="false" mouseTransparent="true">
+        <Label text="Pause Menu" styleClass="title" textFill="WHITE"/>
+        <Button fx:id="resumeButton" text="Resume"/>
+        <Button fx:id="toMainMenuButton" text="Main Menu"/>
+    </VBox>
+</StackPane>

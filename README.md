@@ -7,7 +7,7 @@ TypeMaster is a typing game designed to enhance real-life typing skills. Players
 ## Development Setup
 
 ### 1. Programming Language
-- Java (JDK 24)
+- Java (JDK 21)
 
 ### 2. Framework & GUI
 - JavaFX (for GUI and animations)
@@ -19,8 +19,7 @@ TypeMaster is a typing game designed to enhance real-life typing skills. Players
 - Git (for source code management and collaboration)
 
 ### 5. Story Management
-- Initially: Predefined stories stored in text or JSON files.
-- Future: Procedural story generation.
+- Predefined stories stored in text or JSON files.
 
 ### 6. Core Features
 - Dynamic text rendering.
@@ -28,27 +27,6 @@ TypeMaster is a typing game designed to enhance real-life typing skills. Players
 - Word highlighting (correct/incorrect feedback).
 - Game state management (starting, scoring, and ending conditions).
 - Animations for smooth transitions.
-
----
-
-## Game Modes
-
-### 1. Story Mode
-- Players type out predefined stories (up to 300 words).
-- Three difficulty levels: Easy, Medium, Hard (affects word complexity).
-- No time limit.
-
-### 2. Type Attack Mode
-- Players type as many words as possible.
-- Stories up to 1000 words and a 1-minute time limit.
-- Three difficulty levels affecting word complexity.
-- Every error subtracts 1 second from the remaining time.
-
-### 3. Survival Mode
-- Players must type without making mistakes.
-- A single error results in game over.
-- Increasing difficulty as words become more complex.
-- Players must maintain a minimum words-per-minute (WPM) threshold to avoid losing.
 
 ---
 
