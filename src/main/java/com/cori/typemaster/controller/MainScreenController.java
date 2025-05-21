@@ -34,7 +34,7 @@ public class MainScreenController {
     @FXML
     private Button RandomStoryButton;
 
-    /** Button to allow user to select a specific story. */
+    /** Button to allow the user to select a specific story. */
     @FXML
     private Button selectStoryButton;
 
@@ -76,7 +76,7 @@ public class MainScreenController {
      */
     private void handleSelectStory(ActionEvent event) {
         // Go to the story selection screen
-        com.cori.typemaster.app.GameApplication.switchScene("/com/cori/typemaster/controller/selectStory-screen.fxml");
+        switchToScreen("/com/cori/typemaster/controller/selectStory-screen.fxml");
     }
 
     /**
@@ -85,7 +85,7 @@ public class MainScreenController {
      * @param event The triggered action event.
      */
     private void handleSettings(ActionEvent event) {
-        com.cori.typemaster.app.GameApplication.switchScene("/com/cori/typemaster/controller/settings-screen.fxml");
+        switchToScreen("/com/cori/typemaster/controller/settings-screen.fxml");
     }
 
     /**

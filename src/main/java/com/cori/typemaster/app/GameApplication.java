@@ -9,6 +9,8 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 /**
  * Main application class for TypeMaster.
  * <p>
@@ -27,10 +29,9 @@ import javafx.stage.Stage;
  *   <li>{@link #setFullScreen(boolean)}</li>
  *   <li>{@link #isFullScreen()}</li>
  *   <li>{@link #getPrimaryStage()}</li>
- *   <li>{@link #getMainScene()}</li>
  * </ul>
  *
- * @author https://github.com/CarolineAvi
+ * @author <a href="https://github.com/CarolineAvi">Caroline</a>
  */
 public class GameApplication extends Application {
 
@@ -41,10 +42,8 @@ public class GameApplication extends Application {
 
     /** The main application stage instance. */
     private static Stage primaryStage;
-    /** The persistent StackPane root for all scene switching. */
+    /** The persistent StackPane root for all scene switchings. */
     private static StackPane mainRoot;
-    /** The main Scene object for the application. */
-    private static Scene mainScene;
 
     /** Stores the current fullscreen state. */
     private static boolean isFullScreen = false;
@@ -54,13 +53,14 @@ public class GameApplication extends Application {
      * Initializes the stage, scene, root node, stylesheet and global key handling.
      */
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage stage) {
         primaryStage = stage;
         mainRoot = new StackPane();
-        mainScene = new Scene(mainRoot, WIDTH, HEIGHT);
+        /* The main Scene object for the application. */
+        Scene mainScene = new Scene(mainRoot, WIDTH, HEIGHT);
 
-        // Add global stylesheet for the entire application
-        mainScene.getStylesheets().add(getClass().getResource("/com/cori/typemaster/style.css").toExternalForm());
+        // Add a global stylesheet for the entire application
+        mainScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/com/cori/typemaster/style.css")).toExternalForm());
 
         // Disable the default ESC behavior for exiting fullscreen
         stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
@@ -84,7 +84,7 @@ public class GameApplication extends Application {
 
     /**
      * Replaces the contents of the main root StackPane with a new FXML view.
-     * Maintains fullscreen state when switching, and prevents accidental exit via ESC.
+     * Maintains a fullscreen state when switching and prevents accidental exit via ESC.
      *
      * @param fxmlPath Absolute resource path to the desired FXML file.
      */
@@ -139,16 +139,6 @@ public class GameApplication extends Application {
      */
     public static boolean isFullScreen() {
         return isFullScreen;
-    }
-
-    /**
-     * Returns the main Scene object.
-     * Use for global styling or event filters.
-     *
-     * @return the main Scene
-     */
-    public static Scene getMainScene() {
-        return mainScene;
     }
 
     /**

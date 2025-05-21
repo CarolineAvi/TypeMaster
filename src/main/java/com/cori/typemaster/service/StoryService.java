@@ -66,7 +66,7 @@ public class StoryService {
      * <ul>
      *   <li>If the resource is not found or unreadable, returns an empty list.</li>
      *   <li>Expects the JSON to be an array of objects (<code>title</code>, <code>content</code>, <code>difficulty</code> fields).</li>
-     *   <li>On error, exceptions are caught and ignored.</li>
+     *   <li>When error, exceptions are caught and ignored.</li>
      * </ul>
      *
      * @param resourcePath the absolute path to the JSON resource file in application resources

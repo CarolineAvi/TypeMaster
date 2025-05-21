@@ -5,6 +5,7 @@ module com.cori.typemaster {
     requires com.almasb.fxgl.all;
     requires java.prefs;
     requires org.json;
+    requires annotations;
 
     opens com.cori.typemaster to javafx.fxml;
     exports com.cori.typemaster.app;

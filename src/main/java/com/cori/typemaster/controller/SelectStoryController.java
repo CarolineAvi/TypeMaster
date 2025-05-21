@@ -52,9 +52,6 @@ public class SelectStoryController {
     @FXML
     private Button backButton;
 
-    /** Holds the list of stories loaded from the story service. */
-    private List<Story> storyList;
-
     /**
      * Initializes the Select Story screen after all FXML elements are injected.
      * <ul>
@@ -67,14 +64,15 @@ public class SelectStoryController {
     public void initialize() {
         // Load the list of stories from the service
         StoryService storyService = new StoryService();
-        storyList = storyService.loadAllStories();
+        /* Holds the list of stories loaded from the story service. */
+        List<Story> storyList = storyService.loadAllStories();
         storyListView.setItems(FXCollections.observableArrayList(storyList));
 
         // Set button actions
         startButton.setOnAction(e -> startSelectedStory());
         backButton.setOnAction(e -> handleBack());
 
-        // "Start" button is only enabled after user selects a story
+        // "Start" button is only enabled after the user selects a story
         startButton.disableProperty().bind(
             storyListView.getSelectionModel().selectedItemProperty().isNull()
         );

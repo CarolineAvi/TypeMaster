@@ -124,7 +124,7 @@ public class SettingsController {
     /**
      * Applies the selected display settings to the main application window.
      * <ul>
-     *     <li>Sets window to fullscreen or windowed mode based on user selection.</li>
+     *     <li>Sets the window to fullscreen or windowed mode based on user selection.</li>
      *     <li>If windowed, applies the chosen resolution to the stage size.</li>
      *     <li>Makes the stage non-resizable when in fullscreen.</li>
      * </ul>
